@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 744.09448819 1052.3622047"
+   id="svg3930"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="r-pyramid.svg"
+   inkscape:export-filename="/Users/scw/nyc-r-2017/slides/images/r-pyramid.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <defs
+     id="defs3932" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="3.6667934"
+     inkscape:cx="212.19128"
+     inkscape:cy="824.61145"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:window-width="2560"
+     inkscape:window-height="1391"
+     inkscape:window-x="-22"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0">
+    <sodipodi:guide
+       position="207.53828,865.33373"
+       orientation="1,0"
+       id="guide4826" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata3935">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       sodipodi:type="star"
+       style="opacity:1;fill:#fffef9;fill-opacity:0.94117647;stroke:#6f6f6f;stroke-width:2.7;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path3979"
+       sodipodi:sides="3"
+       sodipodi:cx="207.49653"
+       sodipodi:cy="252.84492"
+       sodipodi:r1="190.19406"
+       sodipodi:r2="95.097031"
+       sodipodi:arg1="0.52359878"
+       sodipodi:arg2="1.5707963"
+       inkscape:flatsided="false"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 372.20942,347.94196 -164.71288,0 -164.712893,-10e-6 82.356443,-142.64554 82.35645,-142.645546 82.35644,142.645546 z"
+       inkscape:transform-center-y="-47.548514" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:22.5px;line-height:125%;font-family:Delicious;-inkscape-font-specification:'Delicious, Medium';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="172.28658"
+       y="145.8595"
+       id="text3981"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3983"
+         x="172.28658"
+         y="145.8595">R fluent</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:Garamond;-inkscape-font-specification:'Garamond, Italic';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#d22a2a;fill-opacity:0.94029852;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="171.39891"
+       y="162.38898"
+       id="text3985"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3987"
+         x="171.39891"
+         y="162.38898"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:Garamond;-inkscape-font-specification:'Garamond, Italic';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#d22a2a;fill-opacity:0.94029852">programmers</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:22.5px;line-height:125%;font-family:Delicious;-inkscape-font-specification:'Delicious, Medium';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="170.99409"
+       y="220.84549"
+       id="text4010"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4012"
+         x="170.99409"
+         y="220.84549">Analysts</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:22.5px;line-height:125%;font-family:Delicious;-inkscape-font-specification:'Delicious, Medium';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="151.3584"
+       y="296.66107"
+       id="text4814"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4816"
+         x="151.3584"
+         y="296.66107">Stakeholders</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:22.5px;line-height:125%;font-family:Delicious;-inkscape-font-specification:'Delicious, Medium';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="164.72157"
+       y="240.20847"
+       id="text4818"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4820"
+         x="164.72157"
+         y="240.20847"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:Garamond;-inkscape-font-specification:'Garamond, Italic';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#d22a2a;fill-opacity:0.94117647">problem solving</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:22.5px;line-height:125%;font-family:Delicious;-inkscape-font-specification:'Delicious, Medium';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="121.35944"
+       y="318.47849"
+       id="text4822"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4824"
+         x="121.35944"
+         y="318.47849"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:Garamond;-inkscape-font-specification:'Garamond, Italic';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#d22a2a;fill-opacity:0.94117647">interpretation / consumption</tspan></text>
+    <path
+       style="fill:#808080;fill-rule:evenodd;stroke:#6f6f6f;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 276.26318,182.39228 -138.81339,0"
+       id="path4828"
+       inkscape:connector-curvature="0" />
+    <image
+       y="257.526"
+       x="94.403427"
+       id="image4847"
+       xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIsAAAADCAYAAACj+vxKAAAABHNCSVQICAgIfAhkiAAAACVJREFU
+OI1jzM/P/88wCkYBASAuLv6daaAdMQqGDhhNLKOAaAAAc6QDjmibxZwAAAAASUVORK5CYII=
+"
+       style="image-rendering:optimizeSpeed"
+       preserveAspectRatio="none"
+       height="3"
+       width="226.81514" />
+  </g>
+</svg>

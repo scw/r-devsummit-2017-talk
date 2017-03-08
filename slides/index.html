@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="reveal.js/favicon.ico">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Shaun Walbridge">
+  <meta name="author" content="Marjean Pobuda">
+  <title>Getting Data Science with R and ArcGIS</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #303030; color: #cccccc; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; }
+td.sourceCode { padding-left: 5px; }
+pre, code { color: #cccccc; background-color: #303030; }
+code > span.kw { color: #f0dfaf; } /* Keyword */
+code > span.dt { color: #dfdfbf; } /* DataType */
+code > span.dv { color: #dcdccc; } /* DecVal */
+code > span.bn { color: #dca3a3; } /* BaseN */
+code > span.fl { color: #c0bed1; } /* Float */
+code > span.ch { color: #dca3a3; } /* Char */
+code > span.st { color: #cc9393; } /* String */
+code > span.co { color: #7f9f7f; } /* Comment */
+code > span.ot { color: #efef8f; } /* Other */
+code > span.al { color: #ffcfaf; } /* Alert */
+code > span.fu { color: #efef8f; } /* Function */
+code > span.er { color: #c3bf9f; } /* Error */
+code > span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
+code > span.cn { color: #dca3a3; font-weight: bold; } /* Constant */
+code > span.sc { color: #dca3a3; } /* SpecialChar */
+code > span.vs { color: #cc9393; } /* VerbatimString */
+code > span.ss { color: #cc9393; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { } /* Variable */
+code > span.cf { color: #f0dfaf; } /* ControlFlow */
+code > span.op { color: #f0efd0; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #ffcfaf; font-weight: bold; } /* Preprocessor */
+code > span.at { } /* Attribute */
+code > span.do { color: #7f9f7f; } /* Documentation */
+code > span.an { color: #7f9f7f; font-weight: bold; } /* Annotation */
+code > span.cv { color: #7f9f7f; font-weight: bold; } /* CommentVar */
+code > span.in { color: #7f9f7f; font-weight: bold; } /* Information */
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/esri-dev-summit-2017.css" id="theme">
+  <link rel="stylesheet" href="./src/devsummit-2017.css"/>
+
+  <!-- Code syntax highlighting -->
+  <link rel="stylesheet" href="reveal.js/lib/css/solarized_dark.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section data-background="images/title.png" class="title">
+  <h1 class="title">Getting Data Science with R and ArcGIS</h1>
+  <h2 class="author">Shaun Walbridge</h2>
+  <h2 class="author">Marjean Pobuda</h2>
+</section>
+
+<section class="slide level2">
+
+<section data-background="images/title.png">
+<h2>
+<a href="https://github.com/scw/r-devsummit-2017-talk" class="uri">https://github.com/scw/r-devsummit-2017-talk</a>
+</h2>
+<h3>
+<a href="https://4326.us/esri/r-2017/devsummit-2017-data-science-r-arcgis-presentation-full.pdf">High Quality PDF (4MB)</a>
+</h3>
+<h3>
+<a href="https://4326.us/esri/r-2017/#resources">Resources Section</a>
+</h3>
+</section>
+</section>
+<section><section id="data-science" class="titleslide slide level1" data-background="images/Picture2.jpg"><h1>Data Science</h1></section><section id="data-science-1" class="slide level2" data-background="images/Picture2.jpg">
+<h2>Data Science</h2>
+<ul>
+<li>A much-hyped phrase, but effectively is about the application of statistics and machine learning to real-world data, and developing formalized tools instead of one-off analyses. Combines diverse fields to solve problems.</li>
+</ul>
+</section><section id="data-science-2" class="slide level2" data-background="images/Picture2.jpg">
+<h2>Data Science</h2>
+<p>What’s a data scientist?</p>
+<div class="left">
+<blockquote>
+<p>“A data scientist is someone who is better at statistics than any software engineer and better at software engineering than any statistician.”<br>   — <a href="https://twitter.com/josh_wills/status/198093512149958656">Josh Wills</a></p>
+</div>
+</blockquote>
+</section><section id="data-science-3" class="slide level2" data-background="images/Picture2.jpg">
+<h2>Data Science</h2>
+<p>Us geographic folks also rely on knowledge from multiple domains. We know that spatial is more than just an <code>x</code> and <code>y</code> column in a table, and how to get value out of this data.</p>
+<aside class="notes">
+<p>Geography has a similar relationship, domain knowledge on top of the spatial</p>
+<blockquote>
+<p>“A data scientist is a statistician who lives in San Francisco”.</p>
+</blockquote>
+<p>Like the Geographic: a similar relationship between our domain and the knowledge we need which spans into other domains. Stats is similar – can’t do it without someone else’s data!</p>
+<p>Goodchild bit: difference is for stats, methods came hundred years ago (e.g. Bayes Method), but only recently have we had the ability to actually compute it for hard problems. GIS is the other way around: data came first, we built up methods around it.</p>
+</aside>
+</section><section id="data-science-languages" class="slide level2" data-background="images/Picture2.jpg">
+<h2>Data Science Languages</h2>
+<ul>
+<li><img src="images/logos/Python_64x64.png" class="tight" style="width:32px" /> Python (SciPy stack, Jupyter, scikit-learn, …)</li>
+<li>C++ (Tensorflow, Shark, MLC++)</li>
+<li>Java (Spark MLlib, Weka)</li>
+<li><img src="images/logos/R_64x64.png" class="tight" style="width:32px" /> <strong>R</strong> (<a href="https://cran.r-project.org/web/views/MachineLearning.html">ML task view</a>)</li>
+<li>Many workflows require combining components from multiple environments.</li>
+</ul>
+</section><section id="data-science-jobs" class="slide level2" data-background="images/Picture2.jpg">
+<h2>Data Science Jobs</h2>
+<figure>
+<img src="images/ds-jobs-by-lang.png" class="tight" style="width:550px" />
+</figure>
+<p><a href="http://r4stats.com/2017/02/28/r-passes-sas/">R4Stats, DS job report</a></p>
+</section><section id="section" class="slide level2" data-background="images/Picture2.jpg">
+<h2><span style="display: none">.</span> <img src="images/logos/conda-logo.png" class="tight" /></h2>
+<ul>
+<li><p>Industry standard for package management in the data science context, built by <a href="https://continuum.io">Continuum Analtyics</a></p></li>
+<li><p>Started with Python, but as shown in the R segment of the plenary, it can be used to support R, and hybrid workflows which connect multiple languages.</p></li>
+<li>Technology partner of Esri, have a talk tomorrow: <a href="https://devsummitps17.schedule.esri.com/session-catalog/216814585">Exploring Continuum Analytics’ Open-Source Offerings</a>
+<ul>
+<li>Thurs 10:30AM, Mesquite G-H</li>
+</ul></li>
+</ul>
+</section></section>
+<section><section id="r" class="titleslide slide level1" data-background="images/Picture4.jpg"><h1>R</h1></section><section id="esri-and" class="slide level2" data-background="images/Picture4.jpg">
+<h2>Esri and <img src="images/logos/R_logo.svg.png" class="tight" style="width: 96px" />?</h2>
+<ul>
+<li>Integration via ArcGIS–R bridge</li>
+<li>Joined <a href="https://www.r-consortium.org/">R Consortium</a> and <a href="https://www.r-project.org/foundation">R Foundation</a></li>
+<li>More to come — GIS has historically been more coupled with Python</li>
+</ul>
+</section><section id="why" class="slide level2" data-background="images/Picture4.jpg">
+<h2>Why <img src="images/logos/R_logo.svg.png" class="tight" style="width: 96px" />?</h2>
+<ul>
+<li>Powerful core data structures and operations
+<ul>
+<li>Data frames, functional programming</li>
+</ul></li>
+<li>Unparalleled breadth of statistical routines
+<ul>
+<li>The <em>de facto</em> language of Statisticians</li>
+</ul></li>
+<li><code>CRAN</code>: 6400 packages for solving problems</li>
+<li>Versatile and powerful plotting</li>
+</ul>
+<div class="fragment">
+<p><br></p>
+<ul>
+<li>We assume basic proficiency programming</li>
+<li>See resources for a deeper dive into R</li>
+</ul>
+<aside class="notes">
+<p>Share the essence of the language.</p>
+<p>Open source – GPL</p>
+<p>Written in C – some parts are very fast, others less so. R code is relatively pokey.</p>
+<p>CRAN is epic. Get immediate access to best of breed methods, written by domain experts.</p>
+</aside>
+</div>
+</section><section id="r-data-types" class="slide level2" data-background="images/Picture4.jpg">
+<h2>R Data Types</h2>
+<p><a href="https://en.wikipedia.org/wiki/Data_type">Data types</a> you’re used to seeing…</p>
+<p><code>Numeric</code> - <code>Integer</code> - <code>Character</code> - <code>Logical</code> - <code>timestamp</code></p>
+<div class="fragment">
+<p>… but others you probably aren’t:</p>
+<p><code>vector</code> - <code>matrix</code> - <code>data.frame</code> - <code>factor</code></p>
+</div>
+</section><section id="data-frames" class="slide level2" data-background="images/Picture4.jpg">
+<h2>Data Frames</h2>
+<ul>
+<li>Treats tabular (and multi-dimensional) data as a <em>labeled</em>, <em>indexed</em> series of observations. Sounds simple, but is a game changer over typical software which is just doing 2D layout (e.g. Excel)</li>
+</ul>
+</section><section id="data-types" class="slide level2" data-background="images/Picture4.jpg">
+<h2>Data Types</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Create a data frame out of an existing source</span>
+df.from.csv &lt;-<span class="st"> </span><span class="kw">read.csv</span>(
+    <span class="st">&quot;data/growth.csv&quot;</span>,
+    <span class="dt">header=</span><span class="ot">TRUE</span>)</code></pre></div>
+</section><section id="data-types-1" class="slide level2" data-background="images/Picture4.jpg">
+<h2>Data Types</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Create a data frame from scratch</span>
+quarter &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>)
+person &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Goodchild&quot;</span>, 
+            <span class="st">&quot;Tobler&quot;</span>, 
+            <span class="st">&quot;Krige&quot;</span>)
+
+met.quota &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>)
+df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(person,
+                 met.quota,
+                 quarter)</code></pre></div>
+</section><section id="data-types-2" class="slide level2" data-background="images/Picture4.jpg">
+<h2>Data Types</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">R<span class="op">&gt;</span><span class="st"> </span>df
+     person met.quota quarter
+<span class="dv">1</span> Goodchild      <span class="ot">TRUE</span>       <span class="dv">2</span>
+<span class="dv">2</span>    Tobler     <span class="ot">FALSE</span>       <span class="dv">3</span>
+<span class="dv">3</span>     Krige      <span class="ot">TRUE</span>       <span class="dv">1</span></code></pre></div>
+<aside class="notes">
+<p>Many packages define their own objects, conversion is an important step in any analysis dealing with higher order objects beyond simple data frames.</p>
+</aside>
+</section><section id="sp-types" class="slide level2" data-background="images/Picture4.jpg">
+<h2><code>sp</code> Types</h2>
+<div style="float: left; width: 50%;">
+<ul>
+<li>0D: <code>SpatialPoints</code></li>
+<li>1D: <code>SpatialLines</code></li>
+<li>2D: <code>SpatialPolygons</code></li>
+<li>3D: Solid</li>
+<li>4D: Space-time</li>
+</ul>
+</div>
+<p>Entity + Attribute model</p>
+<aside class="notes">
+<p>Spatial types class for R. Solids and space time are both ‘in development’, nothing directly in <code>sp</code> but folks are working on this.</p>
+<p>Also a <code>raster</code> package, but not covering this today.</p>
+</aside>
+</section></section>
+<section><section id="r-arcgis-bridge" class="titleslide slide level1" data-background="images/intro-bg.jpg"><h1>R — ArcGIS Bridge</h1></section><section id="r-arcgis-bridge-1" class="slide level2" data-background="images/Picture4.jpg">
+<h2>R — ArcGIS Bridge</h2>
+<p><span style="display:none">.</span> <img src="images/r-pyramid.png" class="tight" /></p>
+</section><section id="r-arcgis-bridge-2" class="slide level2" data-background="images/Picture4.jpg">
+<h2>R — ArcGIS Bridge</h2>
+<figure>
+<img src="images/connect.png" style="border: none" />
+</figure>
+<ul>
+<li>ArcGIS developers can <em>create tools and toolboxes</em> that integrate ArcGIS and R</li>
+<li>ArcGIS users can <em>access R</em> code through geoprocessing scripts</li>
+<li>R users can <em>access organizations GIS’ data</em>, managed in traditional GIS ways</li>
+</ul>
+<p><a href="https://r-arcgis.github.io/">https://r-arcgis.github.io</a></p>
+</section><section id="rarcgis-bridge" class="slide level2" data-background="images/Picture4.jpg">
+<h2>R–ArcGIS Bridge</h2>
+<p>Store your data in ArcGIS, access it quickly in R, return R objects back to ArcGIS native data types (e.g. geodatabase feature classes).</p>
+<p>Knows how to convert spatial data to <code>sp</code> objects.</p>
+<p><a href="https://r-arcgis.github.io/assets/arcgisbinding.pdf">Package Documentation</a></p>
+</section><section id="demo-getting-started" class="slide level2" data-background="images/Picture4.jpg">
+<h2>Demo: Getting Started</h2>
+</section><section id="arcgis-vs-r-data-types" class="slide level2" data-background="images/Picture4.jpg">
+<h2>ArcGIS vs R Data Types</h2>
+<table>
+<thead>
+<tr class="header">
+<th>ArcGIS</th>
+<th>R</th>
+<th>Example Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Address Locator</td>
+<td>Character</td>
+<td><code>Address Locators\\MGRS</code></td>
+</tr>
+<tr class="even">
+<td>Any</td>
+<td>Character</td>
+<td> </td>
+</tr>
+<tr class="odd">
+<td>Boolean</td>
+<td>Logical</td>
+<td> </td>
+</tr>
+<tr class="even">
+<td>Coordinate System</td>
+<td>Character</td>
+<td><code>&quot;PROJCS[\&quot;WGS_1984_UTM_Zone_19N\&quot;...</code></td>
+</tr>
+<tr class="odd">
+<td>Dataset</td>
+<td>Character</td>
+<td><code>&quot;C:\\workspace\\projects\\results.shp&quot;</code></td>
+</tr>
+<tr class="even">
+<td>Date</td>
+<td>Character</td>
+<td><code>&quot;5/6/2015 2:21:12 AM&quot;</code></td>
+</tr>
+<tr class="odd">
+<td>Double</td>
+<td>Numeric</td>
+<td>22.87918</td>
+</tr>
+</tbody>
+</table>
+</section><section id="arcgis-vs-r-data-types-1" class="slide level2" data-background="images/Picture4.jpg">
+<h2>ArcGIS vs R Data Types</h2>
+<table>
+<thead>
+<tr class="header">
+<th>ArcGIS</th>
+<th>R</th>
+<th>Example Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Extent</td>
+<td>Vector (xmin, ymin, xmax, ymax)</td>
+<td>c(0, -591.561, 1000, 992)</td>
+</tr>
+<tr class="even">
+<td>Field</td>
+<td>Character</td>
+<td> </td>
+</tr>
+<tr class="odd">
+<td>Folder</td>
+<td>Character</td>
+<td>full path, use with e.g. <code>file.info()</code></td>
+</tr>
+<tr class="even">
+<td>Long</td>
+<td>Long</td>
+<td>19827398L</td>
+</tr>
+<tr class="odd">
+<td>String</td>
+<td>Character</td>
+<td> </td>
+</tr>
+<tr class="even">
+<td>Text File</td>
+<td>Character</td>
+<td>full path</td>
+</tr>
+<tr class="odd">
+<td>Workspace</td>
+<td>Character</td>
+<td>full path</td>
+</tr>
+</tbody>
+</table>
+</section><section id="access-arcgis-from-r" class="slide level2" data-background="images/Picture4.jpg">
+<h2>Access ArcGIS from R</h2>
+<p>Start by loading the library, and initializing connection to ArcGIS:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># load the ArcGIS-R bridge library</span>
+<span class="kw">library</span>(arcgisbinding)
+<span class="co"># initialize the connection to ArcGIS. Only needed when running directly from R.</span>
+<span class="kw">arc.check_product</span>()</code></pre></div>
+</section><section id="access-arcgis-from-r-1" class="slide level2" data-background="images/Picture4.jpg">
+<h2>Access ArcGIS from R</h2>
+<p>First, select a data source (can be a feature class, a layer, or a table):</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">input.fc &lt;-<span class="st"> </span><span class="kw">arc.open</span>(<span class="st">&#39;data.gdb/features&#39;</span>)</code></pre></div>
+<p>Then, filter the data to the set you want to work with (creates in-memory data frame):</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">filtered.df &lt;-<span class="st"> </span><span class="kw">arc.select</span>(input.fc,
+                          <span class="dt">fields=</span><span class="kw">c</span>(<span class="st">&#39;fid&#39;</span>, <span class="st">&#39;mean&#39;</span>),
+                          <span class="dt">where_clause=</span><span class="st">&quot;mean &lt; 100&quot;</span>)</code></pre></div>
+<p>This creates an <em>ArcGIS data frame</em> – looks like a data frame, but retains references back to the geometry data.</p>
+</section><section id="access-arcgis-from-r-2" class="slide level2" data-background="images/Picture4.jpg">
+<h2>Access ArcGIS from R</h2>
+<p>Now, if we want to do analysis in R with this spatial data, we need it to be represented as <code>sp</code> objects. <code>arc.data2sp</code> does the conversion for us:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df.as.sp &lt;-<span class="st"> </span><span class="kw">arc.data2sp</span>(filtered.df)</code></pre></div>
+<p><code>arc.sp2data</code> inverts this process, taking <code>sp</code> objects and generating ArcGIS compatible data frames.</p>
+</section><section id="access-arcgis-from-r-3" class="slide level2" data-background="images/Picture4.jpg">
+<h2>Access ArcGIS from R</h2>
+<p>Finished with our work in R, want to get the data back to ArcGIS. Write our results back to a new feature class, with <code>arc.write</code>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">arc.write</span>(<span class="st">&#39;data.gdb/new_features&#39;</span>, results.df)</code></pre></div>
+</section><section id="access-arcgis-from-r-4" class="slide level2" data-background="images/Picture4.jpg">
+<h2>Access ArcGIS from R</h2>
+<p>WKT to proj.4 conversion:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">arc.fromP4ToWkt, arc.fromWktToP4</code></pre></div>
+<p>Interacting directly with geometries:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">arc.shapeinfo, arc.shape2sp</code></pre></div>
+<p>Geoprocessing session specific:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">arc.progress_pos, arc.progress_label, <span class="kw">arc.env</span> (read only)</code></pre></div>
+</section></section>
+<section><section id="data-science-with-r" class="titleslide slide level1" data-background="images/Picture4.jpg"><h1>Data Science with R</h1></section><section id="hadley-stack" class="slide level2" data-background="images/Picture4.jpg">
+<h2>Hadley Stack</h2>
+<ul>
+<li><a href="http://priceonomics.com/hadley-wickham-the-man-who-revolutionized-r/">Hadley Wickham</a></li>
+<li>Developer at R Studio, Professor at Rice University</li>
+<li><code>ggplot2</code>, <code>scales</code>, <code>dplyr</code>, <code>devtools</code>, many others</li>
+<li>New, in collaboration with Wes McKinney: <a href="https://blog.rstudio.org/2016/03/29/feather/">feather</a></li>
+</ul>
+<figure>
+<img src="images/ggplot2-boxplot-example.png" style="width: 600px" />
+</figure>
+</section><section id="statistical-formulas" class="slide level2" data-background="images/Picture4.jpg">
+<h2>Statistical Formulas</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fit.results &lt;-<span class="st"> </span><span class="kw">lm</span>(pollution <span class="op">~</span><span class="st"> </span>elevation <span class="op">+</span><span class="st"> </span>rainfall <span class="op">+</span><span class="st"> </span>ppm.nox <span class="op">+</span><span class="st"> </span>urban.density)</code></pre></div>
+<ul>
+<li>Domain specific language for statistics</li>
+<li>Similar properties in other parts of the language</li>
+<li><a href="https://cran.r-project.org/web/packages/caret/vignettes/caret.pdf"><code>caret</code></a> for model specification consistency</li>
+</ul>
+</section><section id="literate-programming" class="slide level2" data-background="images/Picture4.jpg">
+<h2>Literate Programming</h2>
+<div class="left">
+<blockquote>
+<p>I believe that the time is ripe for significantly better documentation of programs, and that we can best achieve this by considering programs to be works of literature.<br>   — Donald Knuth, “Literate Programming”</p>
+</blockquote>
+</div>
+<ul>
+<li>packages: <code>RMarkdown</code>, <code>Roxygen2</code></li>
+<li>Jupyter notebooks</li>
+</ul>
+<aside class="notes">
+<p>What does this mean? You can interweave text with documentation fluidly, makes ‘living documents’ possible. Can have code embedded…</p>
+</aside>
+</section><section id="development-environments" class="slide level2" data-background="images/Picture4.jpg">
+<h2>Development Environments</h2>
+<ul>
+<li><img src="images/logos/RStudio_logo.png" class="tight" style="width: 150px" /></li>
+<li><img src="images/logos/jupyter.png" class="tight" style="width: 180px" /> <em>née IPython</em></li>
+<li><a href="http://blog.revolutionanalytics.com/2016/01/r-coming-to-visual-studio.html">R Tools for Visual Studio</a></li>
+</ul>
+<div class="fragment">
+<p><br></p>
+<ul>
+<li>Best of class tools for interacting with data.</li>
+</ul>
+</div>
+</section><section id="dplyr-package" class="slide level2" data-background="images/Picture4.jpg">
+<h2><code>dplyr</code> Package</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Batting <span class="op">%.%</span>
+<span class="st">  </span><span class="kw">group_by</span>(playerID) <span class="op">%.%</span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">total =</span> <span class="kw">sum</span>(G)) <span class="op">%.%</span>
+<span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(total)) <span class="op">%.%</span>
+<span class="st">  </span><span class="kw">head</span>(<span class="dv">5</span>)</code></pre></div>
+<p><a href="http://blog.rstudio.org/2014/01/17/introducing-dplyr/">Introducing dplyr</a></p>
+</section><section id="r-challenges" class="slide level2" data-background="images/Picture4.jpg">
+<h2>R Challenges</h2>
+<ul>
+<li>Performance issues</li>
+<li>Not a general purpose language</li>
+<li>Lacks purely UI mode of interaction (e.g. plots must be manually specified)</li>
+<li>Programmer only. There is <code>shiny</code>, but R is first and foremost a language that expects fluency from its users</li>
+</ul>
+<aside class="notes">
+<p>R without underlying C code can be slow. More challenging, R is by design an in-memory language, and each operation creates a new in-memory copy of the data structure. Working with large files can be problematic, typically heavy R users invest in lots of RAM.</p>
+</aside>
+</section></section>
+<section><section id="rarcgis-bridge-deep-dive" class="titleslide slide level1" data-background="images/intro-bg.jpg"><h1>R–ArcGIS Bridge Deep Dive</h1></section><section id="building-r-script-tools" class="slide level2" data-background="images/Picture4.jpg">
+<h2>Building R Script Tools</h2>
+<figure>
+<img src="images/r-toolbox-crop.png" class="tight" style="height:32px" />
+</figure>
+<figure>
+<img src="images/semipar-parameters.png" style="height:500px;" />
+</figure>
+</section><section id="demo-r-arcgis-bridge" class="slide level2" data-background="images/Picture4.jpg">
+<h2>Demo: R-ArcGIS bridge</h2>
+</section><section id="how-to-install" class="slide level2" data-background="images/Picture4.jpg">
+<h2>How To Install</h2>
+<ul>
+<li>Install with the <a href="https://github.com/R-ArcGIS/r-bridge-install">R bridge install</a></li>
+<li><a href="https://github.com/R-ArcGIS/r-bridge-install#installation">Detailed installation instructions</a></li>
+</ul>
+</section><section id="where-can-i-run-this" class="slide level2" data-background="images/Picture4.jpg">
+<h2>Where Can I Run This?</h2>
+<figure>
+<img src="images/version-block-detailed.png" />
+</figure>
+</section><section id="where-can-i-run-this-1" class="slide level2" data-background="images/Picture4.jpg">
+<h2>Where Can I Run This?</h2>
+<ul>
+<li>Now:
+<ul>
+<li>First, <a href="https://cran.r-project.org/bin/windows/base/">install R</a> 3.1 or later</li>
+<li>ArcGIS Pro (64-bit) 1.1 or later</li>
+<li>ArcMap 10.3.1 or later:
+<ul>
+<li>32-bit R by default</li>
+<li>64-bit R available via Background Geoprocessing</li>
+</ul></li>
+<li>ArcGIS Server 10.3.1+ / ArcGIS Enterprise</li>
+</ul></li>
+</ul>
+</section><section id="whats-next" class="slide level2" data-background="images/Picture4.jpg">
+<h2>What’s Next?</h2>
+<ul>
+<li>Conda for managing R environments
+<ul>
+<li>Starting at Pro 2.0, can be installed as any other package</li>
+</ul></li>
+<li>Raster support</li>
+</ul>
+</section></section>
+<section><section id="resources" class="titleslide slide level1" data-background="images/Picture2.jpg"><h1>Resources</h1></section><section id="training-resources" class="slide level2" data-background="images/Picture2.jpg">
+<h2>Training Resources</h2>
+<p><a href="https://learn.arcgis.com/en/projects/analyze-crime-using-statistics-and-the-r-arcgis-bridge/">Learn Lesson: Analyze Crime Using Statistics and the R-ArcGIS bridge</a></p>
+<p><a href="https://www.esri.com/training/catalog/58b5e417b89b7e000d8bfe45/using-the-r-arcgis-bridge/">Web Course 1: Using the R-ArcGIS bridge</a></p>
+<p><a href="https://www.esri.com/training/catalog/58b5e578b89b7e000d8bfffd/integrating-r-scripts-into-arcgis-geoprocessing-tools/">Web Course 2: Integrating R Scripts into ArcGIS Geoprocessing Tools</a></p>
+</section><section id="other-sessions" class="slide level2" data-background="images/Picture2.jpg">
+<h2>Other Sessions</h2>
+<ul>
+<li><a href="https://devsummitps17.schedule.esri.com/session-catalog/819386409">Integrating Open-source Statistical Packages with ArcGIS</a> earlier today, <a href="http://www.esri.com/videos/watch?videoid=5074&amp;channelid=LegacyVideo&amp;isLegacy=true&amp;title=integrating-open-source-statistical-packages-with-arcgis">2016 video</a></li>
+<li><a href="https://devsummit.schedule.esri.com/#schedule/56b287364be5dd46a3000235/56b287364be5dd46a3000236">Harnessing the Power of Python in ArcGIS Using the Conda Distribution</a> yesterday, <a href="http://www.esri.com/videos/watch?videoid=5072&amp;channelid=LegacyVideo&amp;isLegacy=true&amp;title=harnessing-the-power-of-python-in-arcgis-using-the-conda-distribution">2016 video</a></li>
+<li><a href="https://devsummitps17.schedule.esri.com/session-catalog/462737696">Scientific Programming with the SciPy Stack</a> earlier today, <a href="http://www.esri.com/videos/watch?videoid=4419&amp;channelid=LegacyVideo&amp;isLegacy=true&amp;title=python:-working-with-scientific-data">2015 video</a></li>
+<li>Getting Data Science with R and ArcGIS <a href="http://www.esri.com/videos/watch?videoid=5129&amp;channelid=LegacyVideo&amp;isLegacy=true&amp;title=getting-data-science-with-r-and-arcgis">2016 video</a></li>
+</ul>
+</section><section id="r-1" class="slide level2" data-background="images/Picture2.jpg">
+<h2>R</h2>
+<p>Looking for a package to solve a problem? Use the <a href="https://cran.r-project.org/web/views/">CRAN Task Views</a>.</p>
+<p>Tons of good books and resources on R available, check out the <a href="http://rseek.org/">RSeek</a> engine to find resources for the language which can be difficult to locate because of the name.</p>
+<p><a href="http://r-pkgs.had.co.nz/">R Packages by Hadley Wickham</a></p>
+</section><section id="spatial-r-data-science" class="slide level2" data-background="images/Picture2.jpg">
+<h2>Spatial R / Data Science</h2>
+<ul>
+<li><p><a href="http://www-bcf.usc.edu/~gareth/ISL/ISLR%20Sixth%20Printing.pdf">An Introduction to Staistical Learning (PDF)</a> <a href="http://www-bcf.usc.edu/~gareth/ISL/getbook.html">website</a> A free and accessible version of the classic in the field, <em>Elements of Statistical Learning</em>.</p></li>
+<li><p><a href="http://treycausey.com/getting_started.html">Getting Started in Data Science</a></p></li>
+</ul>
+</section><section id="arcgis-r" class="slide level2" data-background="images/Picture2.jpg">
+<h2>ArcGIS + R</h2>
+<ul>
+<li><a href="http://video.esri.com/watch/4651/statistical-integration-with-r">UC Plenary Demo: Statistical Integration with R</a>
+<ul>
+<li>Demo of <a href="https://cran.r-project.org/web/packages/SSN/index.html">SSN: spatial modeling on stream networks</a></li>
+</ul></li>
+<li>Cam Plouffe (Esri CA) ran an <a href="https://github.com/cplouffe/r-arcgis-workshop">R ArcGIS Workshop</a>, covers materials in more depth.</li>
+</ul>
+</section><section id="materials" class="slide level2" data-background="images/Picture2.jpg">
+<h2>Materials</h2>
+<p>Courses:</p>
+<ul>
+<li><a href="https://www.coursera.org/course/scicomp">High Performance Scientific Computing</a></li>
+<li><a href="https://www.coursera.org/course/datascitoolbox">The Data Scientist’s Toolbox</a></li>
+</ul>
+<p>Books:</p>
+<ul>
+<li><a href="http://www.esri.com/news/releases/11-2qtr/esri-press-releases-spatial-statistical-data-analysis-for-gis-users.html">Spatial Statistical Data Analysis for GIS Users</a> Konstantin Krivoruchko (GA creator)
+<ul>
+<li>Too big to print. Tons of useful stuff, covers both R and ArcGIS extensively.</li>
+</ul></li>
+</ul>
+</section><section id="packages" class="slide level2" data-background="images/Picture2.jpg">
+<h2>Packages</h2>
+<p>Clustering demo covers <code>mclust</code> and <code>sp</code>.</p>
+<ul>
+<li>Tree-based models, e.g. <a href="http://www.statmethods.net/advstats/cart.html">CART</a></li>
+<li>Time series data, e.g. <a href="https://a-little-book-of-r-for-time-series.readthedocs.org/en/latest/">Little Book of R</a></li>
+</ul>
+</section><section id="r-arcgis-extensions" class="slide level2" data-background="images/Picture2.jpg">
+<h2>R ArcGIS Extensions</h2>
+<ul>
+<li><a href="https://r-arcgis.github.io/">R ArcGIS Bridge</a></li>
+<li><a href="http://mgel.env.duke.edu/mget/">Marine Geospatial Ecology Tools (MGET)</a>
+<ul>
+<li>Combines Python, R, and MATLAB to solve a wide variety of problems</li>
+</ul></li>
+<li><a href="http://www.spatialecology.com/gme/">Geospatial Modeling Environment</a>
+<ul>
+<li>An R flavored language for spatial analysis</li>
+</ul></li>
+</ul>
+</section><section id="conferences" class="slide level2" data-background="images/Picture2.jpg">
+<h2>Conferences</h2>
+<ul>
+<li><a href="http://user2017.brussels/">useR! Conference</a>
+<ul>
+<li>useR 2016 is being held July 5-7 in Brussels, Belgium</li>
+</ul></li>
+<li><a href="http://www.odsc.com">Open Data Science Conference (ODSC)</a>
+<ul>
+<li>Many happening around world, some upcoming ones:</li>
+<li>ODSC East May 3-5 in Boston</li>
+<li>ODSC West Nov 2-4 in San Francisco</li>
+</ul></li>
+</ul>
+</section></section>
+<section><section id="closing" class="titleslide slide level1" data-background="images/Picture4.jpg"><h1>Closing</h1></section><section id="outreach" class="slide level2" data-background="images/Picture4.jpg">
+<h2>Outreach</h2>
+<ul>
+<li>Resources and outreach – connect the dots, want this to be outreach so we can build up more R + ArcGIS people who aren’t as common as our core language folks.</li>
+<li>Future of the project, questions</li>
+</ul>
+</section><section id="community" class="slide level2" data-background="images/Picture4.jpg">
+<h2>Community</h2>
+<ul>
+<li>Open source project, different ethos</li>
+<li>Contributions are the currency
+<ul>
+<li>That said, major uptake in the commercial space:</li>
+<li>Microsoft R (bought Revolution Analytics); R Studio</li>
+</ul></li>
+</ul>
+</section><section id="thanks" class="slide level2" data-background="images/Picture4.jpg">
+<h2>Thanks</h2>
+<ul>
+<li>R team: Dmitry Pavlushko, Steve Kopp, Mark Janikas; today’s speakers
+<ul>
+<li><a href=mailto:r_bridge@esri.com>Contact Us</a></li>
+</ul></li>
+<li>Geoprocessing Team</li>
+</ul>
+</section><section id="rate-this-session" class="slide level2" data-background="images/Picture4.jpg">
+<h2>Rate This Session</h2>
+<p><strong>iOS, Android</strong>: Feedback from within the app</p>
+<div class="fragment">
+<p><strong>Windows Phone, or no smartphone?</strong> Cuneiform tablets accepted.</p>
+<figure>
+<img src="images/Amarna_Akkadian_letter_rotated_2.png" style="border: none; background: none; box-shadow: none;" />
+</figure>
+</div>
+</section><section id="fin" class="slide level2" data-background="images/end.png">
+<h2><span style="display:none">fin</span></h2>
+</section></section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: false,
+        // Display a presentation progress bar
+        progress: true,
+        // Push each slide change to the browser history
+        history: true,
+        // Vertical centering of slides
+        center: true,
+        // Transition style
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
