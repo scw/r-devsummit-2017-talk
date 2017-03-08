@@ -436,11 +436,11 @@ Resources {data-background="images/Picture2.jpg"}
 Training Resources {data-background="images/Picture2.jpg"}
 ------------------
 
-[Learn Lesson: Analyze Crime Using Statistics and the R-ArcGIS bridge](https://learn.arcgis.com/en/projects/analyze-crime-using-statistics-and-the-r-arcgis-bridge/)
+ - [Learn Lesson: Analyze Crime Using Statistics and the R-ArcGIS bridge](https://learn.arcgis.com/en/projects/analyze-crime-using-statistics-and-the-r-arcgis-bridge/)
 
-[Web Course 1: Using the R-ArcGIS bridge](https://www.esri.com/training/catalog/58b5e417b89b7e000d8bfe45/using-the-r-arcgis-bridge/)
+ - [Web Course 1: Using the R-ArcGIS bridge](https://www.esri.com/training/catalog/58b5e417b89b7e000d8bfe45/using-the-r-arcgis-bridge/)
 
-[Web Course 2: Integrating R Scripts into ArcGIS Geoprocessing Tools](https://www.esri.com/training/catalog/58b5e578b89b7e000d8bfffd/integrating-r-scripts-into-arcgis-geoprocessing-tools/)
+ - [Web Course 2: Integrating R Scripts into ArcGIS Geoprocessing Tools](https://www.esri.com/training/catalog/58b5e578b89b7e000d8bfffd/integrating-r-scripts-into-arcgis-geoprocessing-tools/)
 
 Other Sessions {data-background="images/Picture2.jpg"}
 --------------
