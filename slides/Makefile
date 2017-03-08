@@ -18,7 +18,7 @@ pdf:
 fullpdf:
 # decktape can't scrape HTTPS URIs with a relative path, swich directories.
 # Also scrape very slowly -- want backgrounds rendered.
-	cd ~/devsummit/decktape && bin/phantomjs decktape.js --pause=3000 --url=$(public_loc) --filename=$(slide_dir)/$(deck)-presentation-full.pdf
+	cd ~/devsummit/decktape && bin/phantomjs decktape.js --pause=3000 --url=$(public_loc) --filename=$(slide_dir)/$(event)-$(deck)-presentation-full.pdf
 
 clean:
 	rm index.html $(deck)-presentation-handout.pdf $(deck)-presentation-full.pdf
