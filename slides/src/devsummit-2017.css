@@ -6,6 +6,7 @@
 .reveal pre.sourceCode {
     line-height: 1.5em;
     font-size: 0.7em;
+    font-family: "Consolas", monospaced;
 }
 
 .reveal h1 {
@@ -53,6 +54,10 @@
 .reveal .med a code{
     font-size: 0.85em;
     color: #21AEDB;
+}
+
+.reveal code {
+    font-family: "Consolas", monospaced;
 }
 
 pre, code {
