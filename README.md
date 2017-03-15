@@ -6,9 +6,7 @@ Getting Data Science with R and ArcGIS
 
 **[View the Slides](https://4326.us/esri/r-2017/)**
 
-**[Download Handout Version (PDF)](https://4326.us/esri/r/devsummit-2017-data-science-r-arcgis-presentation-handout.pdf)**
-
-**[Download High Quality Version (PDF, 4MB)](https://4326.us/esri/r/devsummit-2017-data-science-r-arcgis-presentation-full.pdf)**
+**[Download High Quality Version (PDF, 4MB)](https://4326.us/esri/r-2017/devsummit-2017-data-science-r-arcgis-presentation-full.pdf)**
 
 **[Esri Canada's Workshop on the R ArcGIS Bridge](https://github.com/cplouffe/r-arcgis-workshop)**
 
