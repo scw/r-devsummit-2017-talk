@@ -13,42 +13,68 @@
   <link rel="stylesheet" href="reveal.js/css/reveal.css">
   <style type="text/css">code{white-space: pre;}</style>
   <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; background-color: #303030; color: #cccccc; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; }
-td.sourceCode { padding-left: 5px; }
-pre, code { color: #cccccc; background-color: #303030; }
-code > span.kw { color: #f0dfaf; } /* Keyword */
-code > span.dt { color: #dfdfbf; } /* DataType */
-code > span.dv { color: #dcdccc; } /* DecVal */
-code > span.bn { color: #dca3a3; } /* BaseN */
-code > span.fl { color: #c0bed1; } /* Float */
-code > span.ch { color: #dca3a3; } /* Char */
-code > span.st { color: #cc9393; } /* String */
-code > span.co { color: #7f9f7f; } /* Comment */
-code > span.ot { color: #efef8f; } /* Other */
-code > span.al { color: #ffcfaf; } /* Alert */
-code > span.fu { color: #efef8f; } /* Function */
-code > span.er { color: #c3bf9f; } /* Error */
-code > span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
-code > span.cn { color: #dca3a3; font-weight: bold; } /* Constant */
-code > span.sc { color: #dca3a3; } /* SpecialChar */
-code > span.vs { color: #cc9393; } /* VerbatimString */
-code > span.ss { color: #cc9393; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { } /* Variable */
-code > span.cf { color: #f0dfaf; } /* ControlFlow */
-code > span.op { color: #f0efd0; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #ffcfaf; font-weight: bold; } /* Preprocessor */
-code > span.at { } /* Attribute */
-code > span.do { color: #7f9f7f; } /* Documentation */
-code > span.an { color: #7f9f7f; font-weight: bold; } /* Annotation */
-code > span.cv { color: #7f9f7f; font-weight: bold; } /* CommentVar */
-code > span.in { color: #7f9f7f; font-weight: bold; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  { color: #cccccc; background-color: #303030; }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ffcfaf; } /* Alert */
+code span.an { color: #7f9f7f; font-weight: bold; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bn { color: #dca3a3; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #f0dfaf; } /* ControlFlow */
+code span.ch { color: #dca3a3; } /* Char */
+code span.cn { color: #dca3a3; font-weight: bold; } /* Constant */
+code span.co { color: #7f9f7f; } /* Comment */
+code span.cv { color: #7f9f7f; font-weight: bold; } /* CommentVar */
+code span.do { color: #7f9f7f; } /* Documentation */
+code span.dt { color: #dfdfbf; } /* DataType */
+code span.dv { color: #dcdccc; } /* DecVal */
+code span.er { color: #c3bf9f; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #c0bed1; } /* Float */
+code span.fu { color: #efef8f; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #7f9f7f; font-weight: bold; } /* Information */
+code span.kw { color: #f0dfaf; } /* Keyword */
+code span.op { color: #f0efd0; } /* Operator */
+code span.ot { color: #efef8f; } /* Other */
+code span.pp { color: #ffcfaf; font-weight: bold; } /* Preprocessor */
+code span.sc { color: #dca3a3; } /* SpecialChar */
+code span.ss { color: #cc9393; } /* SpecialString */
+code span.st { color: #cc9393; } /* String */
+code span.va { } /* Variable */
+code span.vs { color: #cc9393; } /* VerbatimString */
+code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
   </style>
   <link rel="stylesheet" href="reveal.js/css/theme/esri-dev-summit-2017.css" id="theme">
   <link rel="stylesheet" href="./src/devsummit-2017.css"/>
@@ -92,7 +118,7 @@ code > span.in { color: #7f9f7f; font-weight: bold; } /* Information */
 </h3>
 </section>
 </section>
-<section><section id="data-science" class="titleslide slide level1" data-background="images/Picture2.jpg"><h1>Data Science</h1></section><section id="data-science-1" class="slide level2" data-background="images/Picture2.jpg">
+<section><section id="data-science" class="title-slide slide level1" data-background="images/Picture2.jpg"><h1>Data Science</h1></section><section id="data-science-1" class="slide level2" data-background="images/Picture2.jpg">
 <h2>Data Science</h2>
 <ul>
 <li>A much-hyped phrase, but effectively is about the application of statistics and machine learning to real-world data, and developing formalized tools instead of one-off analyses. Combines diverse fields to solve problems.</li>
@@ -119,20 +145,18 @@ code > span.in { color: #7f9f7f; font-weight: bold; } /* Information */
 </section><section id="data-science-languages" class="slide level2" data-background="images/Picture2.jpg">
 <h2>Data Science Languages</h2>
 <ul>
-<li><img src="images/logos/Python_64x64.png" class="tight" style="width:32px" /> Python (SciPy stack, Jupyter, scikit-learn, …)</li>
+<li><img data-src="images/logos/Python_64x64.png" class="tight" style="width:32px" /> Python (SciPy stack, Jupyter, scikit-learn, …)</li>
 <li>C++ (Tensorflow, Shark, MLC++)</li>
 <li>Java (Spark MLlib, Weka)</li>
-<li><img src="images/logos/R_64x64.png" class="tight" style="width:32px" /> <strong>R</strong> (<a href="https://cran.r-project.org/web/views/MachineLearning.html">ML task view</a>)</li>
+<li><img data-src="images/logos/R_64x64.png" class="tight" style="width:32px" /> <strong>R</strong> (<a href="https://cran.r-project.org/web/views/MachineLearning.html">ML task view</a>)</li>
 <li>Many workflows require combining components from multiple environments.</li>
 </ul>
 </section><section id="data-science-jobs" class="slide level2" data-background="images/Picture2.jpg">
 <h2>Data Science Jobs</h2>
-<figure>
-<img src="images/ds-jobs-by-lang.png" class="tight" style="width:550px" />
-</figure>
+<p><img data-src="images/ds-jobs-by-lang.png" class="tight" style="width:550px" /></p>
 <p><a href="http://r4stats.com/2017/02/28/r-passes-sas/">R4Stats, DS job report</a></p>
 </section><section id="section" class="slide level2" data-background="images/Picture2.jpg">
-<h2><span style="display: none">.</span> <img src="images/logos/conda-logo.png" class="tight" /></h2>
+<h2><span style="display: none">.</span> <img data-src="images/logos/conda-logo.png" class="tight" /></h2>
 <ul>
 <li><p>Industry standard for package management in the data science context, built by <a href="https://continuum.io">Continuum Analtyics</a></p></li>
 <li><p>Started with Python, but as shown in the R segment of the plenary, it can be used to support R, and hybrid workflows which connect multiple languages.</p></li>
@@ -142,15 +166,15 @@ code > span.in { color: #7f9f7f; font-weight: bold; } /* Information */
 </ul></li>
 </ul>
 </section></section>
-<section><section id="r" class="titleslide slide level1" data-background="images/Picture4.jpg"><h1>R</h1></section><section id="esri-and" class="slide level2" data-background="images/Picture4.jpg">
-<h2>Esri and <img src="images/logos/R_logo.svg.png" class="tight" style="width: 96px" />?</h2>
+<section><section id="r" class="title-slide slide level1" data-background="images/Picture4.jpg"><h1>R</h1></section><section id="esri-and" class="slide level2" data-background="images/Picture4.jpg">
+<h2>Esri and <img data-src="images/logos/R_logo.svg.png" class="tight" style="width: 96px" />?</h2>
 <ul>
 <li>Integration via ArcGIS–R bridge</li>
 <li>Joined <a href="https://www.r-consortium.org/">R Consortium</a> and <a href="https://www.r-project.org/foundation">R Foundation</a></li>
 <li>More to come — GIS has historically been more coupled with Python</li>
 </ul>
 </section><section id="why" class="slide level2" data-background="images/Picture4.jpg">
-<h2>Why <img src="images/logos/R_logo.svg.png" class="tight" style="width: 96px" />?</h2>
+<h2>Why <img data-src="images/logos/R_logo.svg.png" class="tight" style="width: 96px" />?</h2>
 <ul>
 <li>Powerful core data structures and operations
 <ul>
@@ -191,29 +215,29 @@ code > span.in { color: #7f9f7f; font-weight: bold; } /* Information */
 </ul>
 </section><section id="data-types" class="slide level2" data-background="images/Picture4.jpg">
 <h2>Data Types</h2>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Create a data frame out of an existing source</span>
-df.from.csv &lt;-<span class="st"> </span><span class="kw">read.csv</span>(
-    <span class="st">&quot;data/growth.csv&quot;</span>,
-    <span class="dt">header=</span><span class="ot">TRUE</span>)</code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co"># Create a data frame out of an existing source</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">df.from.csv &lt;-<span class="st"> </span><span class="kw">read.csv</span>(</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">    <span class="st">&quot;data/growth.csv&quot;</span>,</a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">    <span class="dt">header=</span><span class="ot">TRUE</span>)</a></code></pre></div>
 </section><section id="data-types-1" class="slide level2" data-background="images/Picture4.jpg">
 <h2>Data Types</h2>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Create a data frame from scratch</span>
-quarter &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>)
-person &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Goodchild&quot;</span>, 
-            <span class="st">&quot;Tobler&quot;</span>, 
-            <span class="st">&quot;Krige&quot;</span>)
-
-met.quota &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>)
-df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(person,
-                 met.quota,
-                 quarter)</code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="co"># Create a data frame from scratch</span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">quarter &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">person &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Goodchild&quot;</span>, </a>
+<a class="sourceLine" id="cb2-4" data-line-number="4">            <span class="st">&quot;Tobler&quot;</span>, </a>
+<a class="sourceLine" id="cb2-5" data-line-number="5">            <span class="st">&quot;Krige&quot;</span>)</a>
+<a class="sourceLine" id="cb2-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb2-7" data-line-number="7">met.quota &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb2-8" data-line-number="8">df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(person,</a>
+<a class="sourceLine" id="cb2-9" data-line-number="9">                 met.quota,</a>
+<a class="sourceLine" id="cb2-10" data-line-number="10">                 quarter)</a></code></pre></div>
 </section><section id="data-types-2" class="slide level2" data-background="images/Picture4.jpg">
 <h2>Data Types</h2>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">R<span class="op">&gt;</span><span class="st"> </span>df
-     person met.quota quarter
-<span class="dv">1</span> Goodchild      <span class="ot">TRUE</span>       <span class="dv">2</span>
-<span class="dv">2</span>    Tobler     <span class="ot">FALSE</span>       <span class="dv">3</span>
-<span class="dv">3</span>     Krige      <span class="ot">TRUE</span>       <span class="dv">1</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">R<span class="op">&gt;</span><span class="st"> </span>df</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2">     person met.quota quarter</a>
+<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="dv">1</span> Goodchild      <span class="ot">TRUE</span>       <span class="dv">2</span></a>
+<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="dv">2</span>    Tobler     <span class="ot">FALSE</span>       <span class="dv">3</span></a>
+<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="dv">3</span>     Krige      <span class="ot">TRUE</span>       <span class="dv">1</span></a></code></pre></div>
 <aside class="notes">
 <p>Many packages define their own objects, conversion is an important step in any analysis dealing with higher order objects beyond simple data frames.</p>
 </aside>
@@ -234,14 +258,12 @@ df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(person,
 <p>Also a <code>raster</code> package, but not covering this today.</p>
 </aside>
 </section></section>
-<section><section id="r-arcgis-bridge" class="titleslide slide level1" data-background="images/intro-bg.jpg"><h1>R — ArcGIS Bridge</h1></section><section id="r-arcgis-bridge-1" class="slide level2" data-background="images/Picture4.jpg">
+<section><section id="r-arcgis-bridge" class="title-slide slide level1" data-background="images/intro-bg.jpg"><h1>R — ArcGIS Bridge</h1></section><section id="r-arcgis-bridge-1" class="slide level2" data-background="images/Picture4.jpg">
 <h2>R — ArcGIS Bridge</h2>
-<p><span style="display:none">.</span> <img src="images/r-pyramid.png" class="tight" /></p>
+<p><span style="display:none">.</span> <img data-src="images/r-pyramid.png" class="tight" /></p>
 </section><section id="r-arcgis-bridge-2" class="slide level2" data-background="images/Picture4.jpg">
 <h2>R — ArcGIS Bridge</h2>
-<figure>
-<img src="images/connect.png" style="border: none" />
-</figure>
+<p><img data-src="images/connect.png" style="border: none" /></p>
 <ul>
 <li>ArcGIS developers can <em>create tools and toolboxes</em> that integrate ArcGIS and R</li>
 <li>ArcGIS users can <em>access R</em> code through geoprocessing scripts</li>
@@ -354,51 +376,49 @@ df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(person,
 </section><section id="access-arcgis-from-r" class="slide level2" data-background="images/Picture4.jpg">
 <h2>Access ArcGIS from R</h2>
 <p>Start by loading the library, and initializing connection to ArcGIS:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># load the ArcGIS-R bridge library</span>
-<span class="kw">library</span>(arcgisbinding)
-<span class="co"># initialize the connection to ArcGIS. Only needed when running directly from R.</span>
-<span class="kw">arc.check_product</span>()</code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="co"># load the ArcGIS-R bridge library</span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="kw">library</span>(arcgisbinding)</a>
+<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="co"># initialize the connection to ArcGIS. Only needed when running directly from R.</span></a>
+<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="kw">arc.check_product</span>()</a></code></pre></div>
 </section><section id="access-arcgis-from-r-1" class="slide level2" data-background="images/Picture4.jpg">
 <h2>Access ArcGIS from R</h2>
 <p>First, select a data source (can be a feature class, a layer, or a table):</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">input.fc &lt;-<span class="st"> </span><span class="kw">arc.open</span>(<span class="st">&#39;data.gdb/features&#39;</span>)</code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">input.fc &lt;-<span class="st"> </span><span class="kw">arc.open</span>(<span class="st">&#39;data.gdb/features&#39;</span>)</a></code></pre></div>
 <p>Then, filter the data to the set you want to work with (creates in-memory data frame):</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">filtered.df &lt;-<span class="st"> </span><span class="kw">arc.select</span>(input.fc,
-                          <span class="dt">fields=</span><span class="kw">c</span>(<span class="st">&#39;fid&#39;</span>, <span class="st">&#39;mean&#39;</span>),
-                          <span class="dt">where_clause=</span><span class="st">&quot;mean &lt; 100&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">filtered.df &lt;-<span class="st"> </span><span class="kw">arc.select</span>(input.fc,</a>
+<a class="sourceLine" id="cb6-2" data-line-number="2">                          <span class="dt">fields=</span><span class="kw">c</span>(<span class="st">&#39;fid&#39;</span>, <span class="st">&#39;mean&#39;</span>),</a>
+<a class="sourceLine" id="cb6-3" data-line-number="3">                          <span class="dt">where_clause=</span><span class="st">&quot;mean &lt; 100&quot;</span>)</a></code></pre></div>
 <p>This creates an <em>ArcGIS data frame</em> – looks like a data frame, but retains references back to the geometry data.</p>
 </section><section id="access-arcgis-from-r-2" class="slide level2" data-background="images/Picture4.jpg">
 <h2>Access ArcGIS from R</h2>
 <p>Now, if we want to do analysis in R with this spatial data, we need it to be represented as <code>sp</code> objects. <code>arc.data2sp</code> does the conversion for us:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df.as.sp &lt;-<span class="st"> </span><span class="kw">arc.data2sp</span>(filtered.df)</code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">df.as.sp &lt;-<span class="st"> </span><span class="kw">arc.data2sp</span>(filtered.df)</a></code></pre></div>
 <p><code>arc.sp2data</code> inverts this process, taking <code>sp</code> objects and generating ArcGIS compatible data frames.</p>
 </section><section id="access-arcgis-from-r-3" class="slide level2" data-background="images/Picture4.jpg">
 <h2>Access ArcGIS from R</h2>
 <p>Finished with our work in R, want to get the data back to ArcGIS. Write our results back to a new feature class, with <code>arc.write</code>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">arc.write</span>(<span class="st">&#39;data.gdb/new_features&#39;</span>, results.df)</code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">arc.write</span>(<span class="st">&#39;data.gdb/new_features&#39;</span>, results.df)</a></code></pre></div>
 </section><section id="access-arcgis-from-r-4" class="slide level2" data-background="images/Picture4.jpg">
 <h2>Access ArcGIS from R</h2>
 <p>WKT to proj.4 conversion:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">arc.fromP4ToWkt, arc.fromWktToP4</code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">arc.fromP4ToWkt, arc.fromWktToP4</a></code></pre></div>
 <p>Interacting directly with geometries:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">arc.shapeinfo, arc.shape2sp</code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1">arc.shapeinfo, arc.shape2sp</a></code></pre></div>
 <p>Geoprocessing session specific:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">arc.progress_pos, arc.progress_label, <span class="kw">arc.env</span> (read only)</code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">arc.progress_pos, arc.progress_label, <span class="kw">arc.env</span> (read only)</a></code></pre></div>
 </section></section>
-<section><section id="data-science-with-r" class="titleslide slide level1" data-background="images/Picture4.jpg"><h1>Data Science with R</h1></section><section id="hadley-stack" class="slide level2" data-background="images/Picture4.jpg">
+<section><section id="data-science-with-r" class="title-slide slide level1" data-background="images/Picture4.jpg"><h1>Data Science with R</h1></section><section id="hadley-stack" class="slide level2" data-background="images/Picture4.jpg">
 <h2>Hadley Stack</h2>
 <ul>
 <li><a href="http://priceonomics.com/hadley-wickham-the-man-who-revolutionized-r/">Hadley Wickham</a></li>
 <li>Developer at R Studio, Professor at Rice University</li>
 <li><code>ggplot2</code>, <code>scales</code>, <code>dplyr</code>, <code>devtools</code>, many others</li>
-<li>New, in collaboration with Wes McKinney: <a href="https://blog.rstudio.org/2016/03/29/feather/">feather</a></li>
+<li><p>New, in collaboration with Wes McKinney: <a href="https://blog.rstudio.org/2016/03/29/feather/">feather</a></p>
+<p><img data-src="images/ggplot2-boxplot-example.png" style="width: 600px" /></p></li>
 </ul>
-<figure>
-<img src="images/ggplot2-boxplot-example.png" style="width: 600px" />
-</figure>
 </section><section id="statistical-formulas" class="slide level2" data-background="images/Picture4.jpg">
 <h2>Statistical Formulas</h2>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fit.results &lt;-<span class="st"> </span><span class="kw">lm</span>(pollution <span class="op">~</span><span class="st"> </span>elevation <span class="op">+</span><span class="st"> </span>rainfall <span class="op">+</span><span class="st"> </span>ppm.nox <span class="op">+</span><span class="st"> </span>urban.density)</code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">fit.results &lt;-<span class="st"> </span><span class="kw">lm</span>(pollution <span class="op">~</span><span class="st"> </span>elevation <span class="op">+</span><span class="st"> </span>rainfall <span class="op">+</span><span class="st"> </span>ppm.nox <span class="op">+</span><span class="st"> </span>urban.density)</a></code></pre></div>
 <ul>
 <li>Domain specific language for statistics</li>
 <li>Similar properties in other parts of the language</li>
@@ -421,8 +441,8 @@ df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(person,
 </section><section id="development-environments" class="slide level2" data-background="images/Picture4.jpg">
 <h2>Development Environments</h2>
 <ul>
-<li><img src="images/logos/RStudio_logo.png" class="tight" style="width: 150px" /></li>
-<li><img src="images/logos/jupyter.png" class="tight" style="width: 180px" /> <em>née IPython</em></li>
+<li><img data-src="images/logos/RStudio_logo.png" class="tight" style="width: 150px" /></li>
+<li><img data-src="images/logos/jupyter.png" class="tight" style="width: 180px" /> <em>née IPython</em></li>
 <li><a href="http://blog.revolutionanalytics.com/2016/01/r-coming-to-visual-studio.html">R Tools for Visual Studio</a></li>
 </ul>
 <div class="fragment">
@@ -433,11 +453,11 @@ df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(person,
 </div>
 </section><section id="dplyr-package" class="slide level2" data-background="images/Picture4.jpg">
 <h2><code>dplyr</code> Package</h2>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Batting <span class="op">%.%</span>
-<span class="st">  </span><span class="kw">group_by</span>(playerID) <span class="op">%.%</span>
-<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">total =</span> <span class="kw">sum</span>(G)) <span class="op">%.%</span>
-<span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(total)) <span class="op">%.%</span>
-<span class="st">  </span><span class="kw">head</span>(<span class="dv">5</span>)</code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1">Batting <span class="op">%.%</span></a>
+<a class="sourceLine" id="cb13-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(playerID) <span class="op">%.%</span></a>
+<a class="sourceLine" id="cb13-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">total =</span> <span class="kw">sum</span>(G)) <span class="op">%.%</span></a>
+<a class="sourceLine" id="cb13-4" data-line-number="4"><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(total)) <span class="op">%.%</span></a>
+<a class="sourceLine" id="cb13-5" data-line-number="5"><span class="st">  </span><span class="kw">head</span>(<span class="dv">5</span>)</a></code></pre></div>
 <p><a href="http://blog.rstudio.org/2014/01/17/introducing-dplyr/">Introducing dplyr</a></p>
 </section><section id="r-challenges" class="slide level2" data-background="images/Picture4.jpg">
 <h2>R Challenges</h2>
@@ -451,14 +471,10 @@ df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(person,
 <p>R without underlying C code can be slow. More challenging, R is by design an in-memory language, and each operation creates a new in-memory copy of the data structure. Working with large files can be problematic, typically heavy R users invest in lots of RAM.</p>
 </aside>
 </section></section>
-<section><section id="rarcgis-bridge-deep-dive" class="titleslide slide level1" data-background="images/intro-bg.jpg"><h1>R–ArcGIS Bridge Deep Dive</h1></section><section id="building-r-script-tools" class="slide level2" data-background="images/Picture4.jpg">
+<section><section id="rarcgis-bridge-deep-dive" class="title-slide slide level1" data-background="images/intro-bg.jpg"><h1>R–ArcGIS Bridge Deep Dive</h1></section><section id="building-r-script-tools" class="slide level2" data-background="images/Picture4.jpg">
 <h2>Building R Script Tools</h2>
-<figure>
-<img src="images/r-toolbox-crop.png" class="tight" style="height:32px" />
-</figure>
-<figure>
-<img src="images/semipar-parameters.png" style="height:500px;" />
-</figure>
+<p><img data-src="images/r-toolbox-crop.png" class="tight" style="height:32px" /></p>
+<p><img data-src="images/semipar-parameters.png" style="height:500px;" /></p>
 </section><section id="demo-r-arcgis-bridge" class="slide level2" data-background="images/Picture4.jpg">
 <h2>Demo: R-ArcGIS bridge</h2>
 </section><section id="how-to-install" class="slide level2" data-background="images/Picture4.jpg">
@@ -469,9 +485,7 @@ df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(person,
 </ul>
 </section><section id="where-can-i-run-this" class="slide level2" data-background="images/Picture4.jpg">
 <h2>Where Can I Run This?</h2>
-<figure>
-<img src="images/version-block-detailed.png" />
-</figure>
+<p><img data-src="images/version-block-detailed.png" /></p>
 </section><section id="where-can-i-run-this-1" class="slide level2" data-background="images/Picture4.jpg">
 <h2>Where Can I Run This?</h2>
 <ul>
@@ -497,7 +511,7 @@ df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(person,
 <li>Raster support</li>
 </ul>
 </section></section>
-<section><section id="resources" class="titleslide slide level1" data-background="images/Picture2.jpg"><h1>Resources</h1></section><section id="training-resources" class="slide level2" data-background="images/Picture2.jpg">
+<section><section id="resources" class="title-slide slide level1" data-background="images/Picture2.jpg"><h1>Resources</h1></section><section id="training-resources" class="slide level2" data-background="images/Picture2.jpg">
 <h2>Training Resources</h2>
 <ul>
 <li><p><a href="https://learn.arcgis.com/en/projects/analyze-crime-using-statistics-and-the-r-arcgis-bridge/">Learn Lesson: Analyze Crime Using Statistics and the R-ArcGIS bridge</a></p></li>
@@ -575,13 +589,15 @@ df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(person,
 </ul></li>
 <li><a href="http://www.odsc.com">Open Data Science Conference (ODSC)</a>
 <ul>
-<li>Many happening around world, some upcoming ones:</li>
+<li>Many happening around world, some upcoming ones:
+<ul>
 <li>ODSC East May 3-5 in Boston</li>
 <li>ODSC West Nov 2-4 in San Francisco</li>
 </ul></li>
+</ul></li>
 </ul>
 </section></section>
-<section><section id="closing" class="titleslide slide level1" data-background="images/Picture4.jpg"><h1>Closing</h1></section><section id="outreach" class="slide level2" data-background="images/Picture4.jpg">
+<section><section id="closing" class="title-slide slide level1" data-background="images/Picture4.jpg"><h1>Closing</h1></section><section id="outreach" class="slide level2" data-background="images/Picture4.jpg">
 <h2>Outreach</h2>
 <ul>
 <li>Resources and outreach – connect the dots, want this to be outreach so we can build up more R + ArcGIS people who aren’t as common as our core language folks.</li>
@@ -611,9 +627,7 @@ df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(person,
 <p><strong>iOS, Android</strong>: Feedback from within the app</p>
 <div class="fragment">
 <p><strong>Windows Phone, or no smartphone?</strong> Cuneiform tablets accepted.</p>
-<figure>
-<img src="images/Amarna_Akkadian_letter_rotated_2.png" style="border: none; background: none; box-shadow: none;" />
-</figure>
+<p><img data-src="images/Amarna_Akkadian_letter_rotated_2.png" style="border: none; background: none; box-shadow: none;" /></p>
 </div>
 </section><section id="fin" class="slide level2" data-background="images/end.png">
 <h2><span style="display:none">fin</span></h2>
